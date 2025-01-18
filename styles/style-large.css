@@ -1,9 +1,77 @@
-/* Larger Views ******************************/
 @media (min-width: 1024px) {
     main {
-        width: 80%;
-        max-width: 1200px;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1400px;
     }
-
-    
-}
+  
+    .boxcertificate01 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .courseWork-box,
+    .country-box {
+      grid-column: span 2;
+    }
+  
+    .certificate-box {
+      grid-column: span 4;
+    }
+  
+    header h1 {
+      font-size: 2.5rem;
+    }
+  
+    .avatar {
+      width: 120px;
+      height: 120px;
+    }
+  
+    section h2 {
+      font-size: 1.75rem;
+    }
+  
+    section li,
+    section p {
+      font-size: 1.125rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    main {
+      grid-template-columns: repeat(5, 1fr);
+      max-width: 1600px;
+    }
+  
+    .boxcertificate01 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  
+    .courseWork-box,
+    .country-box {
+      grid-column: span 2;
+    }
+  
+    .certificate-box {
+      grid-column: span 5;
+    }
+  
+    header h1 {
+      font-size: 3rem;
+    }
+  
+    .avatar {
+      width: 140px;
+      height: 140px;
+    }
+  
+    section h2 {
+      font-size: 2rem;
+    }
+  
+    section li,
+    section p {
+      font-size: 1.25rem;
+    }
+  }
+  
+  
