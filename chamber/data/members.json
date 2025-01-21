@@ -1,0 +1,101 @@
+[
+  {
+      "Name": "MTN Ghana",
+      "Industry": "Informatics, Technology, Communication",
+      "Physical Address": "MTN House, Independence Avenue, Accra",
+      "Website": "https://mtn.com.gh/",
+      "Phone": "+233 302 611 000",
+      "Representative": "Selorm Adadevoh / CEO",
+      "MemberSince": "25/05/2006",
+      "Membership": "Gold",
+      "logo": "https://ik.imagekit.io/tp/20220321-mtn-logo-new.png?tr=w-800,h-456"
+  },
+  {
+      "Name": "Telecel Ghana",
+      "Industry": "Telecommunications",
+      "Physical Address": "Vodafone House, Accra",
+      "Website": "https://telecel.com.gh/",
+      "Phone": "+233 302 776 000",
+      "Representative": "Patricia Obo-Nai / CEO",
+      "MemberSince": "11/01/2008",
+      "Membership": "Silver",
+      "logo": "https://www.telecel.com.gh/img/Telecel-Icon-Red.png"
+  },
+  {
+      "Name": "Ecobank Ghana",
+      "Industry": "Banking",
+      "Physical Address": "2 Morocco Lane, Off Independence Avenue, Accra",
+      "Website": "https://www.ecobank.com/gh/",
+      "Phone": "+233 302 742 000",
+      "Representative": "Daniel Sackey / Managing Director",
+      "MemberSince": "11/01/1990",
+      "Membership": "Gold",
+      "logo": "https://ecobank.com/img/eco/eco_logo_blue.jpg"
+  },
+  {
+      "Name": "Ghana Commercial Bank",
+      "Industry": "Banking",
+      "Physical Address": "Head Office, Accra",
+      "Website": "https://www.gcbbank.com.gh",
+      "Phone": "+233 302 611 000",
+      "Representative": "Kofi Adomakoh / Managing Director",
+      "MemberSince": "05/01/1953",
+      "Membership": "Gold",
+      "logo": "https://paymentsafrika.com/wp-content/uploads/2014/09/GCB_brandmark.png"
+  },
+  {
+      "Name": "Volta River Authority",
+      "Industry": "Energy",
+      "Physical Address": "VRA Headquarters, Accra",
+      "Website": "https://www.vra.com",
+      "Phone": "+233 302 683 000",
+      "Representative": "Emmanuel Antwi-Darkwa / CEO",
+      "MemberSince": "1961",
+      "Membership": "Gold",
+      "logo": "https://apua-asea.org/wp-content/uploads/2023/01/vra.jpg"
+  },
+  {
+      "Name": "ABB Panama Sales S.A.",
+      "Industry": "Energy",
+      "Physical Address": "Costa del Este, Edificio Financial Park, Piso 19 of B.",
+      "Website": "https://new.abb.com/central-america-caribbean",
+      "Phone": "N/A",
+      "Representative": "Gabriela Gonzalez / CFM",
+      "MemberSince": "12/01/2020",
+      "Membership": "Gold",
+      "logo": "https://panamcham.com/sites/default/files/styles/member_directory_logo/public/abb_1.png?itok=1zj1uIP2"
+  },
+  {
+      "Name": "Abbott Laboratories International LLC",
+      "Industry": "Health, Medicine, Pharmacy",
+      "Physical Address": "Transistmica, Urbanización Industrial Orilla, Edificio Reprico, Piso no. 2",
+      "Website": "https://www.abbott.com/",
+      "Phone": "229-1086 / 229-5574",
+      "Representative": "Carlos Urrego / Gerente de País",
+      "MemberSince": "11/01/2020",
+      "Membership": "Bronze",
+      "logo": "https://panamcham.com/sites/default/files/styles/member_directory_logo/public/descarga_1.png?itok=Gxknep5c"
+  },
+  {
+      "Name": "AES Panamá, S.R.L.",
+      "Industry": "Energy",
+      "Physical Address": "Costa del Este, Paseo Roberto Motta, Edificio Business Park II, Torre V, Piso 11",
+      "Website": "http://www.aespanama.com",
+      "Phone": "2062600",
+      "Representative": "Miguel Bolinaga / President & CEO",
+      "MemberSince": "05/01/1999",
+      "Membership": "Silver",
+      "logo": "https://panamcham.com/sites/default/files/styles/member_directory_logo/public/aes_panama_2.jpg?itok=DkJ4s6S-"
+  },
+  {
+      "Name": "AIESEC",
+      "Industry": "Education",
+      "Physical Address": "City of Knowledge, street Carlos Lara, Office 148B",
+      "Website": "http://aiesec.org.pa",
+      "Phone": "306-3130",
+      "Representative": "Santiago Henao López / Head of Business Development",
+      "MemberSince": "01/01/2009",
+      "Membership": "Gold",
+      "logo": "https://panamcham.com/sites/default/files/styles/member_directory_logo/public/aiesec_blue_logo.png?itok=TJbgKNGP"
+  }
+]
