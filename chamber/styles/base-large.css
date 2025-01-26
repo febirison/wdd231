@@ -149,3 +149,23 @@
       box-shadow: 0 4px 8px var(--onyx);
   }
 }
+
+.empty-link {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.empty-link:hover {
+    background-color: #999;
+}
+
+.empty-link:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
