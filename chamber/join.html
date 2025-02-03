@@ -15,7 +15,7 @@
 
 
     <title>Join | Ghana Chamber of Commerce</title>
-    <meta name="description" content="Ghana Chamber of Commerce, Join Us Page" />
+    <meta name="description" content="Apply for membership with the Ghana Chamber of Commerce and access exclusive business resources, networking opportunities, and community benefits." />
     <meta name="author" content="Anderson Okai" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,67 +61,67 @@
 
         <form method="get" action="thankyou.html">
             <h2 class="sub-title-form">Membership Application</h2>
-            <label class="name-lb">
-                Name:
-            </label>
-            <input type="text" name="firstName" title="Enter your first name" autocomplete="given-name" required
-                placeholder="First">
-            <input type="text" name="lastName" title="Enter your last name" autocomplete="given-name" required
-                placeholder="Last">
+            
+            <!-- Name Section -->
+            <label for="firstName" class="name-lb">First Name:</label>
+            <input type="text" id="firstName" name="firstName" title="Enter your first name" autocomplete="given-name" required placeholder="First">
+            
+            <label for="lastName" class="name-lb">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" title="Enter your last name" autocomplete="family-name" required placeholder="Last">
+            
             <br><br>
-
-            <label>
-                Organizational Title:
-            </label>
-            <input type="text" name="organizationTitle" title="Enter your organizational title"
-                autocomplete="organization-title" pattern="[A-Za-z\s\-.,']{2,}" required>
+            
+            <!-- Organizational Title -->
+            <label for="organizationTitle">Organizational Title:</label>
+            <input type="text" id="organizationTitle" name="organizationTitle" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-.,']{2,}" required>
+            
             <br><br>
-
-            <label>
-                Email Address:
-            </label>
-            <input type="email" name="email" title="Enter your email address" autocomplete="email"
-                placeholder="example@email.com" required>
+            
+            <!-- Email Address -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@email.com" required>
+            
             <br><br>
-
-            <label>
-                Mobile Phone Number:
-            </label>
-            <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required
-                placeholder="+233 123-456-7890">
+            
+            <!-- Mobile Phone Number -->
+            <label for="phone">Mobile Phone Number:</label>
+            <input type="tel" id="phone" name="phone" title="Enter your mobile phone number" autocomplete="tel" required placeholder="+233 123-456-7890">
+            
             <br><br>
-
-            <label>
-                Business/Organization Name:
-            </label>
-            <input type="text" name="organization" title="Enter your business or organization name"
-                autocomplete="organization" required>
+            
+            <!-- Business/Organization Name -->
+            <label for="organization">Business/Organization Name:</label>
+            <input type="text" id="organization" name="organization" title="Enter your business or organization name" autocomplete="organization" required>
+            
             <br><br>
-
-            <label>
-                Membership Level:
-            </label>
-            <select name="membershipLevel" required>
-                <option value="" disabled selected>Select a membership level</option>
-                <option value="NP">NP Membership (Non-Profit)</option>
-                <option value="Bronze">Bronze Membership</option>
-                <option value="Silver">Silver Membership</option>
-                <option value="Gold">Gold Membership</option>
+            
+            <!-- Membership Level -->
+            <label for="membershipLevel">Membership Level:</label>
+            <select id="membershipLevel" name="membershipLevel" required>
+              <option value="" disabled selected>Select a membership level</option>
+              <option value="NP">NP Membership (Non-Profit)</option>
+              <option value="Bronze">Bronze Membership</option>
+              <option value="Silver">Silver Membership</option>
+              <option value="Gold">Gold Membership</option>
             </select>
+            
             <br><br>
-
-            <label>
-                Business/Organization Description:
-            </label>
-            <textarea name="organizationDescription" title="Describe your business or organization" rows="4"
-                cols="50"></textarea>
+            
+            <!-- Business/Organization Description -->
+            <label for="organizationDescription">Business/Organization Description:</label>
+            <textarea id="organizationDescription" name="organizationDescription" title="Describe your business or organization" rows="4" cols="50"></textarea>
+            
             <br><br>
-
-            <input type="hidden" name="timestamp" id="timestamp" value="">
-            <button class="css-button-fully-rounded--grey" type="submit">Submit</button>
-
+            
+            <!-- Hidden Timestamp -->
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+            
+            <!-- Submit Button -->
+            <button class="css-button-fully-rounded--grey" type="submit">Apply for Membership</button>
+            
             <br><br>
-        </form>
+          </form>
+          
 
         <section class="membership-container">
             <h2 class="sub-title-member">Membership Levels</h2>
