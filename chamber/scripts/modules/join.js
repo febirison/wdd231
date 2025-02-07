@@ -16,7 +16,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
         e.preventDefault();
         alert("Form loading error. Please refresh the page.");
     }
-};
+});
 
     const modals = {
         npModal: document.getElementById("npModal"),
