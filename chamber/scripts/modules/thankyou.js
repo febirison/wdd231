@@ -10,5 +10,5 @@ document.getElementById("mobile-number").textContent =
 document.getElementById("business-name").textContent =
     urlParams.get("organization") || "N/A";
 
-const timestamp = urlParams.get("timestamp") || new Date().toLocaleString();
-document.getElementById("timestamp").textContent = timestamp;
+    const timestamp = urlParams.get("timestamp") || new Date().toLocaleString();
+    document.getElementById("timestamp").textContent = timestamp;

@@ -2,6 +2,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const timestampField = document.getElementById("timestamp");
     timestampField.value = new Date().toISOString();
 
+    // Add window.onload as fallback
+window.onload = function() {
+    const timestampField = document.getElementById("timestamp");
+    if (!timestampField.value) {
+        timestampField.value = new Date().toISOString();
+    }
+};
+
+// Add form validation before submission
+document.querySelector("form").addEventListener("submit", (e) => {
+    if (!document.getElementById("timestamp").value) {
+        e.preventDefault();
+        alert("Form loading error. Please refresh the page.");
+    }
+};
+
     const modals = {
         npModal: document.getElementById("npModal"),
         bronzeModal: document.getElementById("bronzeModal"),
