@@ -259,6 +259,105 @@ main.discover {
     background-color: red;
 }
 
+/* Cards Container */
+.cards-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: 1fr;
+}
+
+/* Individual Card Styling */
+.card {
+    background: var(--paragraph-background-white);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    box-shadow: var(--box-shadow);
+    display: grid;
+    grid-template-areas:
+        "image"
+        "title"
+        "address"
+        "description"
+        "button";
+    gap: 10px;
+}
+
+.card img {
+    grid-area: image;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    grid-area: title;
+    margin: 0;
+    color: var(--oxford-blue);
+}
+
+.card .address {
+    grid-area: address;
+    font-size: 0.9rem;
+    color: var(--lunar-base);
+}
+
+.card .description {
+    grid-area: description;
+    font-size: 0.9rem;
+}
+
+.card button {
+    grid-area: button;
+    background: var(--btn-background-color);
+    color: var(--btn-font-on-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive Grid Layouts */
+@media (min-width: 750px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card {
+        grid-template-areas:
+            "image title"
+            "image address"
+            "image description"
+            "button button";
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .card {
+        grid-template-areas:
+            "image"
+            "title"
+            "address"
+            "description"
+            "button";
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hover Effect (Larger Views Only) */
+@media (min-width: 860px) {
+    .card img:hover {
+        transform: scale(1.03);
+        transition: var(--transition);
+    }
+}
+
 /* Sección de Demografía */
 .article-01 {
     font-family: var(--open-sans-paragraph-font);

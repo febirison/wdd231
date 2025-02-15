@@ -122,62 +122,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    let currentImageIndex = 0;
-    const article = document.querySelector("#article-02");
+    const container = document.querySelector(".cards-container");
 
-    // Ensure the article exists
-    if (!article) {
-        console.error("Article container not found in the DOM.");
-        return;
-    }
-
-    // Dynamically create img and h3 elements and append them to the article
-    const imageContainer = document.createElement("img");
-    const descriptionContainer = document.createElement("h3");
-
-    article.appendChild(imageContainer);
-    article.appendChild(descriptionContainer);
-
-    // Fetch images and descriptions from the JSON file
     fetch("data/discover.json")
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
+        .then(response => response.json())
+        .then(cards => {
+            cards.forEach(card => {
+                const cardElement = document.createElement("div");
+                cardElement.className = "card";
+
+                const content = `
+                    <img src="images/${card.image}" alt="${card.title}" loading="lazy">
+                    <h3>${card.title}</h3>
+                    <p class="address">${card.address}</p>
+                    <p class="description">${card.description}</p>
+                    <button class="learn-more">Learn More</button>
+                `;
+                cardElement.innerHTML = content;
+                container.appendChild(cardElement);
+            });
         })
-        .then((events) => {
-            if (!events || events.length === 0) {
-                console.error("No events found in the JSON file.");
-                return;
-            }
-
-            // Function to update image and description
-            function updateImage() {
-                const event = events[currentImageIndex];
-                imageContainer.src = `images/${event.image}`;
-                imageContainer.alt = event.description; // Add alt attribute
-                imageContainer.loading = "lazy"; // Add lazy loading
-                descriptionContainer.textContent = event.description;
-
-                // Move to the next image after 3 seconds
-                currentImageIndex = (currentImageIndex + 1) % events.length;
-            }
-
-            // Initial load
-            updateImage();
-
-            // Update image every 10 seconds with animation
-            setInterval(() => {
-                imageContainer.classList.remove("fade-in");
-                void imageContainer.offsetWidth; // Re-trigger CSS animation
-                imageContainer.classList.add("fade-in");
-                updateImage();
-            }, 10000);
-        })
-        .catch((error) => {
-            console.error("Error fetching the JSON file:", error);
-        });
+        .catch(error => console.error("Error loading cards:", error));
 });
 
 document.addEventListener("DOMContentLoaded", function () {

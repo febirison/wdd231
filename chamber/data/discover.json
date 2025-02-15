@@ -1,14 +1,50 @@
 [
     {
-        "image": "event-01.webp",
-        "description": "Event Business"
+        "title": "Accra Business Hub",
+        "address": "1 Independence Ave, Accra",
+        "description": "Premier center for startups and entrepreneurs.",
+        "image": "event-01.webp"
     },
     {
-        "image": "event-02.webp",
-        "description": "Sell Event"
+        "title": "Kumasi Trade Center",
+        "address": "45 Ashanti St, Kumasi",
+        "description": "Leading marketplace for regional commerce.",
+        "image": "event-02.webp"
     },
     {
-        "image": "event-03.webp",
-        "description": "Economic Event"
+        "title": "Cape Coast Fisheries",
+        "address": "7 Ocean Rd, Cape Coast",
+        "description": "Sustainable fishing and export services.",
+        "image": "event-03.webp"
+    },
+    {
+        "title": "Tamale Textiles",
+        "address": "32 Culture St, Tamale",
+        "description": "Traditional fabrics and modern designs.",
+        "image": "event-01.webp"
+    },
+    {
+        "title": "Takoradi Port Services",
+        "address": "Harbor View, Takoradi",
+        "description": "Efficient logistics and shipping solutions.",
+        "image": "event-02.webp"
+    },
+    {
+        "title": "Sunyani Agro Farms",
+        "address": "89 Greenbelt, Sunyani",
+        "description": "Organic produce and agricultural exports.",
+        "image": "event-03.webp"
+    },
+    {
+        "title": "Ho Craft Collective",
+        "address": "5 Artisan Lane, Ho",
+        "description": "Handcrafted goods and cultural artifacts.",
+        "image": "event-01.webp"
+    },
+    {
+        "title": "Tema Industrial Park",
+        "address": "22 Factory Zone, Tema",
+        "description": "Manufacturing and industrial services.",
+        "image": "event-02.webp"
     }
 ]
