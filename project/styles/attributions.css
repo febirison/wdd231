@@ -1,0 +1,30 @@
+#attributions-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  #attributions-list h2 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #attributions-list ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  #attributions-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  #attributions-list a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  
+  #attributions-list a:hover {
+    color: var(--secondary-color);
+  }
+  
+  
