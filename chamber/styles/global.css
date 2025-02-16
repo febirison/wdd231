@@ -294,7 +294,7 @@ main.discover {
   }
   
   .card h3 { grid-area: title; margin: 0; color: var(--oxford-blue); }
-  .card .address { grid-area: address; font-size: 0.9rem; color: var(--lunar-base); }
+  .card .address { grid-area: address; font-size: 0.9rem; color: var(--film-noir); }
   .card .description { grid-area: description; font-size: 0.9rem; }
   .card button {
     grid-area: button;
@@ -305,6 +305,21 @@ main.discover {
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .calendar-nav {
+    padding: 12px;
+    min-width: 44px;
+    min-height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--oxford-blue);
+}
+
+.calendar-nav:hover {
+    background-color: var(--big-fish-to-fry);
+}
   
   /* Tablet Layout (750px) */
   @media (min-width: 750px) {
@@ -347,6 +362,22 @@ main.discover {
         transition: var(--transition);
     }
 }
+
+/* Add to global.css */
+.article-message {
+    background-color: var(--paragraph-background-white);
+    border: 1px solid var(--big-fish-to-fry);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    font-family: var(--open-sans-paragraph-font);
+  }
+  
+  #visit-message {
+    margin: 0;
+    color: var(--paragraph-color-on-white);
+    font-size: var(--font-size-base);
+  }
 
 /* Sección de Demografía */
 .article-01 {

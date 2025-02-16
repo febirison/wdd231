@@ -78,22 +78,23 @@ function mostrarCalendario(year, month) {
     document
         .getElementById("calendar")
         .getElementsByTagName("caption")[0].innerHTML =
-        "<div>" +
-        meses[month - 1] +
-        " / " +
-        year +
-        "</div>" +
-        "<div><a href='javascript:void(0)' onclick='mostrarCalendario(" +
-        prevYear +
-        "," +
-        prevMonth +
-        ")'>&lt;</a> " +
-        "<a href='javascript:void(0)' onclick='mostrarCalendario(" +
-        nextYear +
-        "," +
-        nextMonth +
-        ")'>&gt;</a></div>";
-
+        "<div>" + 
+    meses[month - 1] + 
+    " / " + 
+    year + 
+    "</div>" +
+    "<div>" +
+    "<button class='calendar-nav' aria-label='Previous month' onclick='mostrarCalendario(" + 
+    prevYear + 
+    "," + 
+    prevMonth + 
+    ")'>&lt;</button> " +
+    "<button class='calendar-nav' aria-label='Next month' onclick='mostrarCalendario(" + 
+    nextYear + 
+    "," + 
+    nextMonth + 
+    ")'>&gt;</button>" +
+    "</div>";
     document
         .getElementById("calendar")
         .getElementsByTagName("tbody")[0].innerHTML = resultado;
@@ -144,6 +145,37 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Error loading cards:", error));
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const visitMessageEl = document.getElementById('visit-message');
+    const lastVisit = localStorage.getItem('lastVisit');
+    const currentDate = new Date();
+    
+    let message;
+    
+    if (!lastVisit) {
+      message = 'Welcome! Let us know if you have any questions.';
+    } else {
+      const lastDate = new Date(lastVisit);
+      const diffTime = currentDate - lastDate;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  
+      if (diffTime < 86400000) { // Less than 1 day
+        message = 'Back so soon! Awesome!';
+      } else {
+        message = `You last visited ${diffDays} day${diffDays !== 1 ? 's' : ''} ago.`;
+      }
+    }
+    
+    // Update localStorage with current visit
+    localStorage.setItem('lastVisit', currentDate.toISOString());
+    
+    // Display message
+    if (visitMessageEl) {
+      visitMessageEl.textContent = message;
+    }
+  });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const lazyImages = document.querySelectorAll(".lazy-image");
