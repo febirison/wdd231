@@ -20,20 +20,19 @@ async function populateSkills() {
 async function populateFeaturedImages() {
   try {
     const projects = await fetchData("data/projects.json")
-    const imageGrid = document.querySelector("#featured-images .image-grid")
+    const imageGrid = document.querySelector(".image-grid")
 
     projects.slice(0, 4).forEach((project) => {
-      const imageLink = document.createElement("a")
-      imageLink.href = `projects.html#${project.id}`
-      imageLink.className = "image-item"
+      const link = document.createElement("a")
+      link.href = `projects.html#${project.id}`
 
       const img = document.createElement("img")
       img.src = project.image
       img.alt = project.title
       img.loading = "lazy"
 
-      imageLink.appendChild(img)
-      imageGrid.appendChild(imageLink)
+      link.appendChild(img)
+      imageGrid.appendChild(link)
     })
   } catch (error) {
     console.error("Error fetching projects for images:", error)
@@ -59,6 +58,11 @@ function createProjectCard(project) {
   const card = document.createElement("div")
   card.className = "project-card"
 
+  const img = document.createElement("img")
+  img.src = project.image
+  img.alt = project.title
+  img.loading = "lazy"
+
   const title = document.createElement("h3")
   title.textContent = project.title
 
@@ -66,10 +70,13 @@ function createProjectCard(project) {
   description.textContent = project.description
 
   const link = document.createElement("a")
-  link.href = `projects.html#${project.id}`
-  link.textContent = "View Project"
+  link.href = project.link
   link.className = "button"
+  link.textContent = "View Project"
+  link.target = "_blank"
+  link.rel = "noopener noreferrer"
 
+  card.appendChild(img)
   card.appendChild(title)
   card.appendChild(description)
   card.appendChild(link)
@@ -85,4 +92,3 @@ function initHomePage() {
 }
 
 document.addEventListener("DOMContentLoaded", initHomePage)
-

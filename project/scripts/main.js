@@ -15,13 +15,19 @@ document.addEventListener("click", (event) => {
 
 // Lazy loading images
 function lazyLoad() {
-  const lazyImages = document.querySelectorAll("img[data-src]")
+  const lazyImages = document.querySelectorAll("img[loading='lazy']")
+
+  if ("loading" in HTMLImageElement.prototype) {
+    // Browser supports native lazy loading
+    return
+  }
+
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target
         img.src = img.dataset.src
-        img.removeAttribute("data-src")
+        img.removeAttribute("loading")
         imageObserver.unobserve(img)
       }
     })

@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Secure Chat Application",
     "description": "End-to-end encrypted chat application built with React and Node.js",
-    "image": "images/projects/secure-chat.jpg",
+    "image": "images/secure-chat.jpg",
     "category": "web",
     "technologies": ["React", "Node.js", "Socket.io", "Crypto-js"],
     "link": "https://github.com/andersonokai/secure-chat"
@@ -12,7 +12,7 @@
     "id": 2,
     "title": "Vulnerability Scanner",
     "description": "Automated vulnerability scanner for web applications",
-    "image": "images/projects/vulnerability-scanner.jpg",
+    "image": "images/vulnerability-scanner.png",
     "category": "cybersecurity",
     "technologies": ["Python", "Requests", "BeautifulSoup"],
     "link": "https://github.com/andersonokai/vulnerability-scanner"
@@ -21,7 +21,7 @@
     "id": 3,
     "title": "2D Platformer Game",
     "description": "A retro-style 2D platformer game built with Unity",
-    "image": "images/projects/platformer-game.jpg",
+    "image": "images/platformer-game.jpg",
     "category": "game",
     "technologies": ["Unity", "C#"],
     "link": "https://github.com/andersonokai/platformer-game"

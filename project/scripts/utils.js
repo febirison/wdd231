@@ -10,9 +10,3 @@ export async function fetchData(url) {
     throw error
   }
 }
-
-
-
-
-  
-  

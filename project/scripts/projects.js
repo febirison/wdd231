@@ -38,17 +38,14 @@ function createProjectCard(project) {
   const description = document.createElement("p")
   description.textContent = project.description
 
-  const link = document.createElement("a")
-  link.href = project.link
-  link.textContent = "View Project"
-  link.className = "button"
-  link.target = "_blank"
-  link.rel = "noopener noreferrer"
+  const viewButton = document.createElement("button")
+  viewButton.textContent = "View Details"
+  viewButton.addEventListener("click", () => openProjectModal(project))
 
   card.appendChild(img)
   card.appendChild(title)
   card.appendChild(description)
-  card.appendChild(link)
+  card.appendChild(viewButton)
 
   return card
 }
@@ -77,12 +74,55 @@ function updateActiveFilter(activeButton) {
   activeButton.classList.add("active")
 }
 
+// Project modal
+function openProjectModal(project) {
+  const modal = document.getElementById("project-modal")
+  const modalTitle = document.getElementById("modal-title")
+  const modalImage = document.getElementById("modal-image")
+  const modalDescription = document.getElementById("modal-description")
+  const modalTech = document.getElementById("modal-tech")
+  const modalLink = document.getElementById("modal-link")
+
+  modalTitle.textContent = project.title
+  modalImage.src = project.image
+  modalImage.alt = project.title
+  modalDescription.textContent = project.description
+  modalTech.textContent = `Technologies: ${project.technologies.join(", ")}`
+  modalLink.href = project.link
+
+  modal.style.display = "block"
+}
+
+function closeProjectModal() {
+  const modal = document.getElementById("project-modal")
+  modal.style.display = "none"
+}
+
 // Initialize projects page
 function initProjectsPage() {
   populateProjects()
   setupProjectFilters()
+
+  // Set up modal close button
+  const closeButton = document.querySelector(".close")
+  closeButton.addEventListener("click", closeProjectModal)
+
+  // Close modal when clicking outside
+  window.addEventListener("click", (event) => {
+    const modal = document.getElementById("project-modal")
+    if (event.target === modal) {
+      closeProjectModal()
+    }
+  })
+
+  // Handle hash navigation
+  if (window.location.hash) {
+    const projectId = Number.parseInt(window.location.hash.slice(1))
+    const project = allProjects.find((p) => p.id === projectId)
+    if (project) {
+      setTimeout(() => openProjectModal(project), 500)
+    }
+  }
 }
 
 document.addEventListener("DOMContentLoaded", initProjectsPage)
-
-

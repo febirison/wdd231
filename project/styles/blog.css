@@ -2,46 +2,72 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .blog-post {
   background-color: var(--background-color);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
 .blog-post:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .blog-post h2 {
-  font-size: 1.5rem;
-  margin: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.blog-post p {
-  margin: 0 1rem 1rem;
+.post-date {
   color: var(--text-color);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
-.blog-post a {
+.post-excerpt {
+  margin-bottom: 1.5rem;
+}
+
+.blog-post .button {
   display: inline-block;
-  margin: 0 1rem 1rem;
 }
 
+/* Modal styles */
 .blog-post-modal .modal-content {
   max-width: 800px;
 }
 
 .blog-post-modal h2 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.blog-post-modal p {
-  margin-bottom: 1rem;
+.blog-post-modal .post-date {
+  margin-bottom: 2rem;
+}
+
+.post-content {
+  line-height: 1.8;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 1rem 0 1.5rem 2rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  #blog-posts {
+    grid-template-columns: 1fr;
+  }
 }
 

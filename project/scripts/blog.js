@@ -1,6 +1,6 @@
 async function fetchBlogPosts() {
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
+    const response = await fetch("data/blog-posts.json")
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
@@ -33,19 +33,25 @@ function createBlogPostElement(post) {
   const title = document.createElement("h2")
   title.textContent = post.title
 
-  const body = document.createElement("p")
-  body.textContent = post.body.substring(0, 100) + "..."
-
-  const readMore = document.createElement("a")
-  readMore.href = `#${post.id}`
-  readMore.textContent = "Read More"
-  readMore.addEventListener("click", (e) => {
-    e.preventDefault()
-    openBlogPost(post)
+  const date = document.createElement("p")
+  date.className = "post-date"
+  date.textContent = new Date(post.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   })
 
+  const excerpt = document.createElement("p")
+  excerpt.className = "post-excerpt"
+  excerpt.textContent = post.excerpt
+
+  const readMore = document.createElement("button")
+  readMore.textContent = "Read More"
+  readMore.addEventListener("click", () => openBlogPost(post))
+
   article.appendChild(title)
-  article.appendChild(body)
+  article.appendChild(date)
+  article.appendChild(excerpt)
   article.appendChild(readMore)
 
   return article
@@ -58,7 +64,14 @@ function openBlogPost(post) {
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>${post.title}</h2>
-            <p>${post.body}</p>
+            <p class="post-date">${new Date(post.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}</p>
+            <div class="post-content">
+                ${post.content}
+            </div>
         </div>
     `
 
@@ -77,4 +90,3 @@ function openBlogPost(post) {
 }
 
 document.addEventListener("DOMContentLoaded", populateBlogPosts)
-

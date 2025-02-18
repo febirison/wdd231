@@ -73,11 +73,8 @@ header {
 
 #nav-links a:hover,
 #nav-links a.active {
-  color: var(--primary-color);
-}
-
-#nav-links a.active {
-  border-bottom: 2px solid var(--primary-color);
+  text-decoration: none;
+  border-bottom: 2px solid var(--background-color);
 }
 
 /* Main content */
@@ -124,7 +121,6 @@ footer nav a {
 }
 
 footer nav a:hover {
-  color: var(--primary-color);
   text-decoration: underline;
 }
 
@@ -156,6 +152,7 @@ footer nav a:hover {
     right: 0;
     background-color: var(--primary-color);
     padding: 1rem;
+    z-index: 1000;
   }
 
   #nav-links.show {
@@ -192,6 +189,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .button:hover,
@@ -264,7 +262,7 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-/* Add styles for social media icons */
+/* Social icons */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -273,65 +271,19 @@ button[type="submit"] {
 }
 
 .social-icons a {
-  color: var(--primary-color);
+  color: var(--background-color);
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: var(--background-color);
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* Project card styles */
-.project-card {
-  background-color: var(--background-color);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border-color);
-}
-
-.project-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.project-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Blog post styles */
-.blog-post {
-  background-color: var(--background-color);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border-color);
-}
-
-.blog-post h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Skills list styles */
-#skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style-type: none;
-}
-
-#skills-list li {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
