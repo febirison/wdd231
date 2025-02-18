@@ -30,7 +30,7 @@
     "id": 4,
     "title": "IT Ticketing System",
     "description": "A full-stack ticketing system for IT support requests",
-    "image": "images/projects/it-ticketing.jpg",
+    "image": "images/it-ticketing.png",
     "category": "web",
     "technologies": ["React", "Express", "MongoDB", "Node.js"],
     "link": "https://github.com/andersonokai/it-ticketing-system"
@@ -39,7 +39,7 @@
     "id": 5,
     "title": "Network Traffic Analyzer",
     "description": "A tool for analyzing and visualizing network traffic patterns",
-    "image": "images/projects/network-analyzer.jpg",
+    "image": "images/network-analyzer.webp",
     "category": "cybersecurity",
     "technologies": ["Python", "Scapy", "Matplotlib"],
     "link": "https://github.com/andersonokai/network-traffic-analyzer"
