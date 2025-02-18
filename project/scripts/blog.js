@@ -53,7 +53,7 @@ function createBlogPostElement(post) {
 
 function openBlogPost(post) {
   const modal = document.createElement("div")
-  modal.className = "modal"
+  modal.className = "modal blog-post-modal"
   modal.innerHTML = `
         <div class="modal-content">
             <span class="close">&times;</span>

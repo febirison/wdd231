@@ -1,17 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact")
+  const formDataElement = document.getElementById("form-data")
+  const storedData = localStorage.getItem("contactFormData")
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault()
+  if (storedData) {
+    const data = JSON.parse(storedData)
+    formDataElement.innerHTML = `
+            <h2>Submitted Information:</h2>
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Subject:</strong> ${data.subject}</p>
+            <p><strong>Message:</strong> ${data.message}</p>
+        `
 
-    const formData = new FormData(form)
-    const data = Object.fromEntries(formData)
-
-    // Store form data in localStorage
-    localStorage.setItem("contactFormData", JSON.stringify(data))
-
-    // Redirect to success page
-    window.location.href = "contact-success.html"
-  })
+    // Clear the stored data
+    localStorage.removeItem("contactFormData")
+  } else {
+    formDataElement.innerHTML = "<p>No form data found.</p>"
+  }
 })
 

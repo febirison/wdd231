@@ -6,11 +6,10 @@
 }
 
 :root {
-  --primary-color: #0070ba;
-  --secondary-color: #062a44;
+  --primary-color: #000000;
   --background-color: #ffffff;
-  --text-color: #062a44;
-  --light-text: #ffffff;
+  --text-color: #000000;
+  --border-color: #000000;
 }
 
 body {
@@ -27,13 +26,13 @@ a {
 }
 
 a:hover {
-  color: var(--secondary-color);
+  text-decoration: underline;
 }
 
 /* Header and Navigation */
 header {
-  background-color: var(--secondary-color);
-  color: var(--light-text);
+  background-color: var(--primary-color);
+  color: var(--background-color);
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -50,7 +49,7 @@ header {
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: var(--light-text);
+  color: var(--background-color);
 }
 
 #menu-toggle {
@@ -67,18 +66,18 @@ header {
 }
 
 #nav-links a {
-  color: var(--light-text);
+  color: var(--background-color);
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 #nav-links a:hover,
 #nav-links a.active {
-  color: var(--background-color);
+  color: var(--primary-color);
 }
 
 #nav-links a.active {
-  border-bottom: 2px solid var(--background-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 
 /* Main content */
@@ -108,7 +107,7 @@ h2 {
 /* Footer */
 footer {
   background-color: var(--primary-color);
-  color: var(--light-text);
+  color: var(--background-color);
   text-align: center;
   padding: 2rem 0;
   margin-top: 2rem;
@@ -125,7 +124,8 @@ footer nav a {
 }
 
 footer nav a:hover {
-  color: var(--light-text);
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 /* Responsive design */
@@ -134,7 +134,7 @@ footer nav a:hover {
     display: block;
     background: none;
     border: none;
-    color: var(--light-text);
+    color: var(--background-color);
     font-size: 1.5rem;
     cursor: pointer;
   }
@@ -143,7 +143,7 @@ footer nav a:hover {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--light-text);
+    background-color: var(--background-color);
     margin: 5px 0;
   }
 
@@ -185,18 +185,19 @@ footer nav a:hover {
 button {
   display: inline-block;
   background-color: var(--primary-color);
-  color: var(--light-text);
+  color: var(--background-color);
   padding: 0.75rem 1.5rem;
-  border: none;
+  border: 1px solid var(--primary-color);
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: 500;
 }
 
 .button:hover,
 button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--background-color);
+  color: var(--primary-color);
   text-decoration: none;
 }
 
@@ -217,7 +218,7 @@ input,
 textarea {
   padding: 0.5rem;
   margin-top: 0.25rem;
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -236,7 +237,7 @@ button[type="submit"] {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(13, 27, 42, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -249,7 +250,7 @@ button[type="submit"] {
 }
 
 .close {
-  color: var(--secondary-color);
+  color: var(--text-color);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -258,7 +259,7 @@ button[type="submit"] {
 
 .close:hover,
 .close:focus {
-  color: var(--text-color);
+  color: var(--primary-color);
   text-decoration: none;
   cursor: pointer;
 }
@@ -272,59 +273,13 @@ button[type="submit"] {
 }
 
 .social-icons a {
-  color: var(--light-text);
+  color: var(--primary-color);
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: var(--primary-color);
-}
-
-/* Dark mode styles */
-body.dark-mode {
-  --primary-color: #0070ba;
-  --secondary-color: #ffffff;
-  --background-color: #062a44;
-  --text-color: #ffffff;
-  --light-text: #ffffff;
-}
-
-body.dark-mode a {
-  color: #0070ba;
-}
-
-body.dark-mode header {
-  background-color: #062a44;
-}
-
-body.dark-mode #nav-links a {
-  color: #ffffff;
-}
-
-body.dark-mode #nav-links a.active {
-  border-bottom-color: #0070ba;
-}
-
-body.dark-mode .button,
-body.dark-mode button {
-  background-color: #0070ba;
-  color: #ffffff;
-}
-
-body.dark-mode .button:hover,
-body.dark-mode button:hover {
-  background-color: #062a44;
-}
-
-/* Dark mode toggle button */
-#dark-mode-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-left: 1rem;
-  color: var(--light-text);
+  color: var(--background-color);
 }
 
 /* Project card styles */
@@ -334,7 +289,7 @@ body.dark-mode button:hover {
   padding: 1rem;
   margin-bottom: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--border-color);
 }
 
 .project-card img {
@@ -356,7 +311,7 @@ body.dark-mode button:hover {
   padding: 1rem;
   margin-bottom: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--border-color);
 }
 
 .blog-post h2 {
@@ -374,7 +329,7 @@ body.dark-mode button:hover {
 
 #skills-list li {
   background-color: var(--primary-color);
-  color: var(--light-text);
+  color: var(--background-color);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9rem;
