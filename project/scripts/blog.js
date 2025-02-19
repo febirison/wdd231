@@ -1,3 +1,5 @@
+let blogPosts = []
+
 async function fetchBlogPosts() {
   try {
     const response = await fetch("data/blog-posts.json")
@@ -9,21 +11,6 @@ async function fetchBlogPosts() {
     console.error("Could not fetch blog posts:", error)
     return []
   }
-}
-
-async function populateBlogPosts() {
-  const posts = await fetchBlogPosts()
-  const blogPostsSection = document.getElementById("blog-posts")
-
-  if (posts.length === 0) {
-    blogPostsSection.innerHTML = "<p>Unable to load blog posts at this time. Please try again later.</p>"
-    return
-  }
-
-  posts.forEach((post) => {
-    const postElement = createBlogPostElement(post)
-    blogPostsSection.appendChild(postElement)
-  })
 }
 
 function createBlogPostElement(post) {
@@ -47,7 +34,8 @@ function createBlogPostElement(post) {
 
   const readMore = document.createElement("button")
   readMore.textContent = "Read More"
-  readMore.addEventListener("click", () => openBlogPost(post))
+  readMore.className = "button"
+  readMore.addEventListener("click", () => displayFullPost(post))
 
   article.appendChild(title)
   article.appendChild(date)
@@ -57,36 +45,51 @@ function createBlogPostElement(post) {
   return article
 }
 
-function openBlogPost(post) {
-  const modal = document.createElement("div")
-  modal.className = "modal blog-post-modal"
-  modal.innerHTML = `
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>${post.title}</h2>
-            <p class="post-date">${new Date(post.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}</p>
-            <div class="post-content">
-                ${post.content}
-            </div>
-        </div>
-    `
+function displayFullPost(post) {
+  const blogPosts = document.getElementById("blog-posts")
+  const fullPost = document.getElementById("full-post")
+  const postTitle = document.getElementById("post-title")
+  const postDate = document.getElementById("post-date")
+  const postContent = document.getElementById("post-content")
 
-  document.body.appendChild(modal)
+  blogPosts.classList.add("hidden")
+  fullPost.classList.remove("hidden")
 
-  const closeButton = modal.querySelector(".close")
-  closeButton.addEventListener("click", () => {
-    document.body.removeChild(modal)
+  postTitle.textContent = post.title
+  postDate.textContent = new Date(post.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   })
+  postContent.innerHTML = post.content
 
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      document.body.removeChild(modal)
-    }
+  window.scrollTo(0, 0)
+}
+
+function setupBackButton() {
+  const backButton = document.getElementById("back-to-posts")
+  backButton.addEventListener("click", () => {
+    document.getElementById("blog-posts").classList.remove("hidden")
+    document.getElementById("full-post").classList.add("hidden")
   })
 }
 
-document.addEventListener("DOMContentLoaded", populateBlogPosts)
+async function populateBlogPosts() {
+  blogPosts = await fetchBlogPosts()
+  const blogPostsSection = document.getElementById("blog-posts")
+
+  if (blogPosts.length === 0) {
+    blogPostsSection.innerHTML = "<p>Unable to load blog posts at this time. Please try again later.</p>"
+    return
+  }
+
+  blogPosts.forEach((post) => {
+    const postElement = createBlogPostElement(post)
+    blogPostsSection.appendChild(postElement)
+  })
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  populateBlogPosts()
+  setupBackButton()
+})

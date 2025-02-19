@@ -35,39 +35,55 @@
   display: inline-block;
 }
 
-/* Modal styles */
-.blog-post-modal .modal-content {
+#full-post {
   max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
 
-.blog-post-modal h2 {
+#full-post h2 {
   margin-bottom: 0.5rem;
 }
 
-.blog-post-modal .post-date {
+#full-post .post-date {
   margin-bottom: 2rem;
 }
 
-.post-content {
+#post-content {
   line-height: 1.8;
 }
 
-.post-content p {
+#post-content p {
   margin-bottom: 1.5rem;
 }
 
-.post-content ul,
-.post-content ol {
+#post-content ul,
+#post-content ol {
   margin: 1rem 0 1.5rem 2rem;
 }
 
-.post-content li {
+#post-content li {
   margin-bottom: 0.5rem;
+}
+
+#back-to-posts {
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 768px) {
   #blog-posts {
     grid-template-columns: 1fr;
+  }
+
+  #full-post {
+    padding: 1rem;
   }
 }
 
