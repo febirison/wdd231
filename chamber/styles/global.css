@@ -352,7 +352,6 @@ main.discover {
     padding: 12px;
     min-width: 44px;
     min-height: 44px;
-    background: none;
     border: none;
     cursor: pointer;
     font-size: 1.2rem;
@@ -615,5 +614,21 @@ footer p:first-child {
     }
 }
 
-
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+   }
+   
+   .social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+   }
+   
+   .social-icons img:hover {
+    transform: scale(1.2);
+   }
+   
   
