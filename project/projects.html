@@ -38,15 +38,17 @@
 
     <main>
         <h1>My Projects</h1>
-        <section id="project-filters">
+        <div id="project-filters">
+            <h2 class="sr-only">Project Filters</h2>
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="web">Web Development</button>
             <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
             <button class="filter-btn" data-filter="game">Game Development</button>
-        </section>
-        <section id="projects-grid">
+        </div>
+        <div id="projects-grid">
+            <h2 class="sr-only">Project List</h2>
             <!-- Projects will be dynamically populated here -->
-        </section>
+        </div>
     </main>
 
     <footer>
@@ -71,7 +73,7 @@
     <div id="project-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 id="modal-title"></h2>
+            <h2 id="modal-title">Project Details</h2>
             <img id="modal-image" src="/placeholder.svg" alt="" loading="lazy">
             <p id="modal-description"></p>
             <p id="modal-tech"></p>
@@ -83,4 +85,3 @@
     <script type="module" src="scripts/projects.js"></script>
 </body>
 </html>
-
