@@ -3,7 +3,7 @@
         "title": "Accra Business Hub",
         "address": "1 Independence Ave, Accra",
         "description": "Premier center for startups and entrepreneurs.",
-        "image": "event-01.webp"
+        "image": "https://github.com/febirison/wdd231/chamber/images/event-01.webp"
     },
     {
         "title": "Kumasi Trade Center",

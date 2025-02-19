@@ -187,12 +187,19 @@ nav li:last-child {
 /* Estilo general */
 main.discover {
     display: grid;
-    grid-template-columns: 1fr; /* Una columna por defecto (para pantallas pequeñas) */
+    grid-template-columns: 1fr 2fr 1fr; /* Una columna por defecto (para pantallas pequeñas) */
     gap: 20px;
+    align-items: start;
     padding: 20px;
-    width: 100%; /* Ocupa todo el ancho por defecto */
-    max-width: 700px; /* Máximo ancho para pantallas grandes */
+    max-width: 1200px; /* Máximo ancho para pantallas grandes */
     margin: 0 auto; /* Centrar el contenido en la pantalla */
+    grid-template-rows: auto 1fr;
+}
+
+.discover h1{
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Sidebar en una columna */
@@ -201,6 +208,41 @@ main.discover {
     flex-direction: column;
     gap: 20px;
 }
+
+/* Responsive Layout for Tablets */
+@media (max-width: 768px) {
+    main.discover {
+        grid-template-columns: 1fr; /* Stack everything in one column */
+        grid-template-rows: auto auto auto; /* One row for each section */
+        text-align: center;
+    }
+
+    .discover .side-bar,
+    .discover .cards-container {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 480px) {
+    main.discover {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .discover h1 {
+        font-size: 1.5rem; /* Reduce heading size */
+        padding: 10px;
+    }
+
+    .discover .side-bar,
+    .discover .cards-container {
+        width: 90%; /* Reduce width for better spacing */
+    }
+}
+
 
 /* Artículos en la barra lateral */
 .discover .side-bar article {
